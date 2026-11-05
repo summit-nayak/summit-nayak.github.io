@@ -151,6 +151,26 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Infinite Tech Stack Marquee Animation */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="bg-black text-slate-200 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 min-h-screen relative overflow-x-hidden">
@@ -366,59 +386,72 @@
 
         </div>
 
-        <!-- Right Column: Frosted Glass Scientific Telemetry Card -->
+        <!-- Right Column: Frosted Glass Scientific Telemetry & Education Card -->
         <div class="lg:col-span-4 w-full">
-          <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 space-y-5 transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_15px_35px_-5px_rgba(34,211,238,0.25)]">
+          <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_15px_35px_-5px_rgba(34,211,238,0.25)]">
             
-            <!-- Terminal Header -->
-            <div class="flex items-center justify-between border-b border-white/10 pb-3 font-mono text-xs text-slate-400">
-              <div class="flex items-center space-x-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-              </div>
-              <span class="text-cyan-400 font-mono text-[11px] tracking-wide">telemetry.spec</span>
-            </div>
-
-            <!-- Profile Attributes -->
-            <div class="space-y-3.5 font-mono text-xs">
-              <div>
-                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Academic Background</span>
-                <span class="text-white font-semibold">Integrated M.Sc. in Physics</span>
-                <span class="text-slate-400 block text-[11px]">Minor in Computer Science</span>
-              </div>
-
-              <div>
-                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Primary Domains</span>
-                <span class="text-cyan-300 font-medium">Planetary Surface Composition</span>
-                <span class="text-slate-300 block">Exoplanet Atmospheric Retrieval</span>
-              </div>
-
-              <div>
-                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Key Instrument Datasets</span>
-                <span class="text-slate-300 font-medium">VEX / VIRTIS (Venus Express)</span>
-                <span class="text-slate-400 block">LIFE Interferometer Simulated Spectra</span>
-              </div>
-
-              <div>
-                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Computational Environment</span>
-                <span class="text-emerald-400 font-medium">GNU/Linux &bull; Python &bull; PyARTS</span>
-              </div>
-
-              <div class="pt-3 border-t border-white/10 space-y-1">
-                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Direct Contact</span>
-                <a href="mailto:summit.b.nayak@gmail.com" class="text-slate-300 hover:text-cyan-400 transition-colors block truncate">summit.b.nayak@gmail.com</a>
-                <a href="tel:+919556548618" class="text-slate-400 hover:text-cyan-400 transition-colors block">+91 9556548618</a>
+            <!-- NISER Campus Cover Image -->
+            <div class="overflow-hidden rounded-t-2xl relative h-48 w-full bg-black/40">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/National_Institute_of_Science_Education_and_Research_%28NISER%29_Jatni_Campus.jpg" alt="National Institute of Science Education and Research (NISER) Jatni Campus" class="w-full h-full object-cover opacity-80 mix-blend-lighten transition-transform duration-700 hover:scale-110 group-hover:scale-110" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 flex items-center space-x-2">
+                <span class="px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/15 text-cyan-300 font-mono text-[10px] tracking-wider uppercase font-semibold">
+                  NISER Bhubaneswar Campus
+                </span>
               </div>
             </div>
 
-            <!-- Terminal Status Footer -->
-            <div class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
-              <span class="text-slate-500">STATUS:</span>
-              <span class="text-cyan-300 flex items-center gap-1.5 font-semibold">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                ACTIVE_INVESTIGATION
-              </span>
+            <div class="p-6 space-y-5">
+              <!-- Terminal Header -->
+              <div class="flex items-center justify-between border-b border-white/10 pb-3 font-mono text-xs text-slate-400">
+                <div class="flex items-center space-x-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                </div>
+                <span class="text-cyan-400 font-mono text-[11px] tracking-wide">telemetry.spec</span>
+              </div>
+
+              <!-- Profile Attributes -->
+              <div class="space-y-3.5 font-mono text-xs">
+                <div>
+                  <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Academic Background</span>
+                  <span class="text-white font-semibold">Integrated M.Sc. in Physics</span>
+                  <span class="text-slate-400 block text-[11px]">Minor in Computer Science &bull; NISER</span>
+                </div>
+
+                <div>
+                  <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Primary Domains</span>
+                  <span class="text-cyan-300 font-medium">Planetary Surface Composition</span>
+                  <span class="text-slate-300 block">Exoplanet Atmospheric Retrieval</span>
+                </div>
+
+                <div>
+                  <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Key Instrument Datasets</span>
+                  <span class="text-slate-300 font-medium">VEX / VIRTIS (Venus Express)</span>
+                  <span class="text-slate-400 block">LIFE Interferometer Simulated Spectra</span>
+                </div>
+
+                <div>
+                  <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Computational Environment</span>
+                  <span class="text-emerald-400 font-medium">GNU/Linux &bull; Python &bull; PyARTS</span>
+                </div>
+
+                <div class="pt-3 border-t border-white/10 space-y-1">
+                  <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Direct Contact</span>
+                  <a href="mailto:summit.b.nayak@gmail.com" class="text-slate-300 hover:text-cyan-400 transition-colors block truncate">summit.b.nayak@gmail.com</a>
+                  <a href="tel:+919556548618" class="text-slate-400 hover:text-cyan-400 transition-colors block">+91 9556548618</a>
+                </div>
+              </div>
+
+              <!-- Terminal Status Footer -->
+              <div class="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span class="text-slate-500">STATUS:</span>
+                <span class="text-cyan-300 flex items-center gap-1.5 font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                  ACTIVE_INVESTIGATION
+                </span>
+              </div>
             </div>
 
           </div>
@@ -426,6 +459,37 @@
 
       </div>
     </section>
+
+
+    <!-- 1.5 INFINITE TECH STACK MARQUEE -->
+    <div class="w-screen relative left-1/2 -translate-x-1/2 overflow-hidden py-4 my-8 bg-white/5 backdrop-blur-md border-y border-white/10 select-none">
+      <div class="marquee-track flex whitespace-nowrap">
+        <div class="flex items-center space-x-8 font-mono text-cyan-400 text-base sm:text-lg tracking-widest uppercase shrink-0 px-4">
+          <span>Python</span> <span class="text-white/20">&bull;</span>
+          <span>PyARTS</span> <span class="text-white/20">&bull;</span>
+          <span>NumPy</span> <span class="text-white/20">&bull;</span>
+          <span>SciPy</span> <span class="text-white/20">&bull;</span>
+          <span>Matplotlib</span> <span class="text-white/20">&bull;</span>
+          <span>Pandas</span> <span class="text-white/20">&bull;</span>
+          <span>VIRTIS Data</span> <span class="text-white/20">&bull;</span>
+          <span>Magellan</span> <span class="text-white/20">&bull;</span>
+          <span>Tailwind CSS</span> <span class="text-white/20">&bull;</span>
+          <span>Linux</span> <span class="text-white/20">&bull;</span>
+        </div>
+        <div class="flex items-center space-x-8 font-mono text-cyan-400 text-base sm:text-lg tracking-widest uppercase shrink-0 px-4" aria-hidden="true">
+          <span>Python</span> <span class="text-white/20">&bull;</span>
+          <span>PyARTS</span> <span class="text-white/20">&bull;</span>
+          <span>NumPy</span> <span class="text-white/20">&bull;</span>
+          <span>SciPy</span> <span class="text-white/20">&bull;</span>
+          <span>Matplotlib</span> <span class="text-white/20">&bull;</span>
+          <span>Pandas</span> <span class="text-white/20">&bull;</span>
+          <span>VIRTIS Data</span> <span class="text-white/20">&bull;</span>
+          <span>Magellan</span> <span class="text-white/20">&bull;</span>
+          <span>Tailwind CSS</span> <span class="text-white/20">&bull;</span>
+          <span>Linux</span> <span class="text-white/20">&bull;</span>
+        </div>
+      </div>
+    </div>
 
 
     <!-- 2. RESEARCH SECTION -->
@@ -444,55 +508,68 @@
       <div class="grid grid-cols-1 gap-8">
         
         <!-- Project 1: Master's Thesis -->
-        <article class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-10 transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_15px_35px_-5px_rgba(34,211,238,0.25)]">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
-            <div class="space-y-2">
-              <div class="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400 uppercase tracking-wider">
-                <span class="px-2.5 py-0.5 rounded-md bg-white/5 border border-white/15">Master's Thesis</span>
-                <span class="text-white/30">&bull;</span>
-                <span class="text-slate-400">NISER Bhubaneswar</span>
+        <article class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_15px_35px_-5px_rgba(34,211,238,0.25)]">
+          <!-- Cover Image: Venus VIRTIS Research Visual -->
+          <div class="overflow-hidden rounded-t-2xl relative h-52 sm:h-64 w-full bg-black/40">
+            <img src="./assets/introduction_slide_RED_Astrobiology_Virtual school.jpg" alt="Venus VIRTIS Surface Compositional Pipeline Research Visual" class="w-full h-full object-cover opacity-80 mix-blend-lighten transition-transform duration-700 hover:scale-110 group-hover:scale-110" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex items-center space-x-2">
+              <span class="px-3 py-1 rounded-md bg-black/70 backdrop-blur-md border border-white/15 text-cyan-400 font-mono text-xs tracking-wider uppercase font-semibold">
+                Venus Express &bull; VIRTIS Data
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-10">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
+              <div class="space-y-2">
+                <div class="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400 uppercase tracking-wider">
+                  <span class="px-2.5 py-0.5 rounded-md bg-white/5 border border-white/15">Master's Thesis</span>
+                  <span class="text-white/30">&bull;</span>
+                  <span class="text-slate-400">NISER Bhubaneswar</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  Venus Surface Compositional Analysis
+                </h3>
               </div>
-              <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                Venus Surface Compositional Analysis
-              </h3>
+              
+              <div class="font-mono text-xs text-slate-300 bg-white/5 px-3.5 py-2 rounded-xl border border-white/10 self-start">
+                Advisor: <span class="text-white font-semibold">Dr. Guneshwar Thangjam</span>
+              </div>
             </div>
-            
-            <div class="font-mono text-xs text-slate-300 bg-white/5 px-3.5 py-2 rounded-xl border border-white/10 self-start">
-              Advisor: <span class="text-white font-semibold">Dr. Guneshwar Thangjam</span>
-            </div>
-          </div>
 
-          <!-- Description -->
-          <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 font-light">
-            Conducted research at NISER Bhubaneswar focused on Venus surface compositional analysis using Venus Express (VIRTIS) data, Venus GRAM, and radiative transfer models. The research investigates atmospheric window radiance to isolate surface thermal emissions from dense atmospheric scattering and absorption.
-          </p>
+            <!-- Description -->
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 font-light">
+              Conducted research at NISER Bhubaneswar focused on Venus surface compositional analysis using Venus Express (VIRTIS) data, Venus GRAM, and radiative transfer models. The research investigates atmospheric window radiance to isolate surface thermal emissions from dense atmospheric scattering and absorption.
+            </p>
 
-          <!-- Technical Breakdown Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/10 pt-6 font-mono text-xs">
-            <div class="space-y-1.5">
-              <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Data &amp; Instrument</span>
-              <p class="text-white font-semibold text-sm">Venus Express (VIRTIS)</p>
-              <p class="text-slate-400 text-xs">Visible &amp; Near-IR Spectra</p>
+            <!-- Technical Breakdown Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/10 pt-6 font-mono text-xs">
+              <div class="space-y-1.5">
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Data &amp; Instrument</span>
+                <p class="text-white font-semibold text-sm">Venus Express (VIRTIS)</p>
+                <p class="text-slate-400 text-xs">Visible &amp; Near-IR Spectra</p>
+              </div>
+              <div class="space-y-1.5">
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Atmospheric Modeling</span>
+                <p class="text-white font-semibold text-sm">Venus GRAM</p>
+                <p class="text-slate-400 text-xs">Global Reference Atmosphere</p>
+              </div>
+              <div class="space-y-1.5">
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Methodology</span>
+                <p class="text-white font-semibold text-sm">Radiative Transfer Models</p>
+                <p class="text-slate-400 text-xs">Spectral Unmixing &amp; Inversion</p>
+              </div>
             </div>
-            <div class="space-y-1.5">
-              <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Atmospheric Modeling</span>
-              <p class="text-white font-semibold text-sm">Venus GRAM</p>
-              <p class="text-slate-400 text-xs">Global Reference Atmosphere</p>
-            </div>
-            <div class="space-y-1.5">
-              <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Methodology</span>
-              <p class="text-white font-semibold text-sm">Radiative Transfer Models</p>
-              <p class="text-slate-400 text-xs">Spectral Unmixing &amp; Inversion</p>
-            </div>
-          </div>
 
-          <!-- Tags -->
-          <div class="flex flex-wrap gap-2 mt-8 pt-6 border-t border-white/10 font-mono text-xs">
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#PlanetarySurfaces</span>
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#VenusExpress</span>
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#VIRTIS</span>
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#VenusGRAM</span>
-            <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#RadiativeTransfer</span>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mt-8 pt-6 border-t border-white/10 font-mono text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#PlanetarySurfaces</span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#VenusExpress</span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#VIRTIS</span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#VenusGRAM</span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 text-cyan-300 border border-white/10">#RadiativeTransfer</span>
+            </div>
           </div>
         </article>
 
@@ -785,31 +862,46 @@ ws.yCalc() <span class="text-slate-500"># Synthetic spectral radiance calculatio
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           <!-- Item 1: Venus VIRTIS Surface Compositional Pipeline -->
-          <article class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-7 flex flex-col justify-between space-y-6 transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_15px_35px_-5px_rgba(34,211,238,0.25)]">
-            <div class="space-y-3.5">
-              <div class="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400">
-                <span class="px-2.5 py-0.5 rounded-md bg-white/5 border border-white/10">Conference Poster</span>
-                <span class="text-white/30">&bull;</span>
-                <span class="text-slate-400">Feb 2025</span>
+          <article class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_15px_35px_-5px_rgba(34,211,238,0.25)]">
+            <div>
+              <!-- Cover Image: STEP 2025 Presentation Slide -->
+              <div class="overflow-hidden rounded-t-2xl relative h-40 w-full bg-black/40">
+                <img src="./assets/introduction_slide_RED_Astrobiology_Virtual school.jpg" alt="Venus VIRTIS Surface Compositional Pipeline Poster Visual" class="w-full h-full object-cover opacity-80 mix-blend-lighten transition-transform duration-700 hover:scale-110 group-hover:scale-110" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div class="absolute bottom-3 left-4 flex items-center space-x-2">
+                  <span class="px-2.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/15 text-cyan-300 font-mono text-[10px] tracking-wider uppercase font-semibold">
+                    STEP 2025 &bull; IIT Roorkee
+                  </span>
+                </div>
               </div>
-              
-              <h4 class="text-xl font-bold text-white tracking-tight leading-snug">
-                Venus VIRTIS Surface Compositional Pipeline
-              </h4>
-              
-              <p class="text-slate-300 text-sm leading-relaxed font-light">
-                Poster presented at the IIT Roorkee S2 STEP Conference (Feb 2025).
-              </p>
+
+              <div class="p-6 sm:p-7 space-y-3.5">
+                <div class="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400">
+                  <span class="px-2.5 py-0.5 rounded-md bg-white/5 border border-white/10">Conference Poster</span>
+                  <span class="text-white/30">&bull;</span>
+                  <span class="text-slate-400">Feb 2025</span>
+                </div>
+                
+                <h4 class="text-xl font-bold text-white tracking-tight leading-snug">
+                  Venus VIRTIS Surface Compositional Pipeline
+                </h4>
+                
+                <p class="text-slate-300 text-sm leading-relaxed font-light">
+                  Poster presented at the IIT Roorkee S2 STEP Conference (Feb 2025).
+                </p>
+              </div>
             </div>
 
-            <div class="pt-4 border-t border-white/10">
-              <a href="./assets/Summit_VIRTIS_STEP.pdf" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/15 border border-white/15 hover:border-cyan-400/60 text-cyan-300 hover:text-white font-mono text-xs font-semibold transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.35)] group">
-                <svg class="w-4 h-4 text-cyan-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                </svg>
-                <span>View STEP 2025 Poster</span>
-                <span class="text-slate-500 group-hover:text-white transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </a>
+            <div class="p-6 sm:p-7 pt-0">
+              <div class="pt-4 border-t border-white/10">
+                <a href="./assets/Summit_VIRTIS_STEP.pdf" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/15 border border-white/15 hover:border-cyan-400/60 text-cyan-300 hover:text-white font-mono text-xs font-semibold transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.35)] group">
+                  <svg class="w-4 h-4 text-cyan-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  <span>View STEP 2025 Poster</span>
+                  <span class="text-slate-500 group-hover:text-white transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </a>
+              </div>
             </div>
           </article>
 
