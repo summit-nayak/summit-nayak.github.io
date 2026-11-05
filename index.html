@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summit Bikram Nayak | Planetary Science & Computational Modeling</title>
+  <meta name="description" content="Academic portfolio of Summit Bikram Nayak - Researcher specializing in exoplanet atmospheres, planetary surfaces, and radiative transfer computational pipelines.">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            space: {
+              950: '#030712',
+              900: '#070d1d',
+              850: '#0b1329',
+              800: '#111e3b',
+              700: '#1e293b',
+              600: '#334155',
+            },
+            accent: {
+              cyan: '#06b6d4',
+              sky: '#38bdf8',
+              blue: '#2563eb',
+              indigo: '#6366f1',
+            }
+          },
+          backgroundImage: {
+            'grid-pattern': "radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px)",
+            'radial-glow': "radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 70%)",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #030712;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+    
+    .tech-border-glow {
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.12);
+    }
+    .tech-border-glow:hover {
+      box-shadow: 0 0 30px 0px rgba(56, 189, 248, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-space-950 text-slate-200 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Space Grid Background -->
+  <div class="fixed inset-0 bg-grid-pattern [background-size:32px_32px] pointer-events-none z-0 opacity-40"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-radial-glow pointer-events-none z-0"></div>
+
+  <!-- STICKY NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-space-950/85 border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Identifier -->
+      <a href="#about" class="group flex items-center space-x-2 font-mono text-sm tracking-tight text-slate-300 hover:text-white transition-colors">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform shadow-[0_0_8px_#22d3ee]"></span>
+        <span class="font-semibold text-white">S. B. NAYAK</span>
+        <span class="text-slate-500">/</span>
+        <span class="text-cyan-400 text-xs hidden sm:inline-block">PLANETARY_PHYSICS</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-mono text-slate-400">
+        <a href="#about" class="nav-link px-3 py-1.5 rounded hover:text-cyan-300 hover:bg-space-850 transition-all">01. About</a>
+        <a href="#research" class="nav-link px-3 py-1.5 rounded hover:text-cyan-300 hover:bg-space-850 transition-all">02. Research</a>
+        <a href="#software" class="nav-link px-3 py-1.5 rounded hover:text-cyan-300 hover:bg-space-850 transition-all">03. Pipelines & Tech</a>
+        <a href="#outreach" class="nav-link px-3 py-1.5 rounded hover:text-cyan-300 hover:bg-space-850 transition-all">04. Outreach & Film</a>
+        <a href="#publications" class="nav-link px-3 py-1.5 rounded hover:text-cyan-300 hover:bg-space-850 transition-all">05. Publications & Docs</a>
+        <a href="#contact" class="nav-link px-3 py-1.5 rounded hover:text-cyan-300 hover:bg-space-850 transition-all">06. Contact</a>
+      </nav>
+
+      <!-- Quick Action / CV Links -->
+      <div class="hidden sm:flex items-center space-x-2">
+        <a href="./assets/Summit_Europass_CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-mono font-medium border border-cyan-500/40 text-cyan-300 bg-cyan-950/30 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all" title="Curriculum Vitae (Academic)">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          <span>Academic CV</span>
+        </a>
+        <a href="./assets/CV_Summit_Jobs.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-mono font-medium border border-slate-700 text-slate-300 bg-space-900 hover:border-slate-500 hover:text-white transition-all" title="Curriculum Vitae (Industry)">
+          <span>Industry CV</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded text-slate-400 hover:text-white hover:bg-space-800 transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-400">
+        <svg id="menuOpenIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="menuCloseIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-slate-800 bg-space-950/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-2 font-mono text-sm">
+      <a href="#about" class="block py-2 px-3 rounded text-slate-300 hover:text-cyan-300 hover:bg-space-850">01. About Me</a>
+      <a href="#research" class="block py-2 px-3 rounded text-slate-300 hover:text-cyan-300 hover:bg-space-850">02. Research Projects</a>
+      <a href="#software" class="block py-2 px-3 rounded text-slate-300 hover:text-cyan-300 hover:bg-space-850">03. Software & Data Science</a>
+      <a href="#outreach" class="block py-2 px-3 rounded text-slate-300 hover:text-cyan-300 hover:bg-space-850">04. Outreach & Creative</a>
+      <a href="#publications" class="block py-2 px-3 rounded text-slate-300 hover:text-cyan-300 hover:bg-space-850">05. Publications & Documents</a>
+      <a href="#contact" class="block py-2 px-3 rounded text-slate-300 hover:text-cyan-300 hover:bg-space-850">06. Contact & Inquiries</a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+        <a href="./assets/Summit_Europass_CV.pdf" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded text-cyan-300 bg-cyan-950/40 border border-cyan-800/60 text-center text-xs">Download Academic CV</a>
+        <a href="./assets/CV_Summit_Jobs.pdf" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded text-slate-300 bg-space-900 border border-slate-800 text-center text-xs">Download Industry CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28 sm:space-y-36 pt-12 pb-24">
+
+    <!-- 1. HERO / ABOUT ME SECTION -->
+    <section id="about" class="scroll-mt-24 pt-6">
+      
+      <!-- Top Status Pill -->
+      <div class="inline-flex items-center space-x-2.5 px-3 py-1 rounded-full bg-space-850 border border-slate-700/80 mb-6 text-xs font-mono">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="text-slate-300 tracking-wide">RESEARCH DOSSIER &bull; COMPUTATIONAL ASTROPHYSICS</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left Column: Primary Narrative -->
+        <div class="lg:col-span-8 space-y-6">
+          
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+              Summit Bikram Nayak
+            </h1>
+            <p class="font-mono text-cyan-400 text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
+              Integrated M.Sc. in Physics (CS Minor) <span class="text-slate-600 hidden sm:inline">|</span> 
+              <span class="block sm:inline text-slate-300">Planetary Science &amp; Computational Modeling</span>
+            </p>
+          </div>
+
+          <!-- Bio Paragraph -->
+          <div class="relative border-l-2 border-cyan-500/50 pl-5 py-1">
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+              I am a researcher specializing in exoplanet atmospheres and planetary surface compositions. 
+              I build computational data pipelines and radiative transfer models to analyze spectral data.
+            </p>
+          </div>
+
+          <!-- Academic & Research Badges -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded bg-space-900 border border-slate-800 text-slate-300 font-mono text-xs flex items-center space-x-1.5">
+              <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+              <span>NISER Bhubaneswar</span>
+            </span>
+
+            <span class="px-2.5 py-1 rounded bg-space-900 border border-slate-800 text-slate-300 font-mono text-xs flex items-center space-x-1.5">
+              <span class="text-cyan-400 font-bold">&lambda;</span>
+              <span>Radiative Transfer</span>
+            </span>
+
+            <span class="px-2.5 py-1 rounded bg-space-900 border border-slate-800 text-slate-300 font-mono text-xs flex items-center space-x-1.5">
+              <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+              <span>Planetary Spectroscopy</span>
+            </span>
+
+            <span class="px-2.5 py-1 rounded bg-space-900 border border-slate-800 text-slate-300 font-mono text-xs flex items-center space-x-1.5">
+              <span class="text-indigo-400 font-bold">&part;</span>
+              <span>Numerical Inversions</span>
+            </span>
+          </div>
+
+          <!-- Quick Action & CV Download Buttons -->
+          <div class="space-y-3 pt-4">
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="./assets/Summit_Europass_CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2.5 px-4 sm:px-5 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-space-950 font-bold text-sm transition-all shadow-lg shadow-cyan-500/20 transform hover:-translate-y-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                <span>Download Academic CV</span>
+              </a>
+
+              <a href="./assets/CV_Summit_Jobs.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2.5 px-4 sm:px-5 py-2.5 rounded-lg bg-space-850 hover:bg-space-800 border border-slate-700 hover:border-cyan-400 text-slate-200 font-semibold text-sm transition-all shadow-sm transform hover:-translate-y-0.5">
+                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <span>Download Industry CV</span>
+              </a>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
+              <a href="#research" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded bg-space-900 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-slate-700 transition-colors">
+                <span>View Research Projects</span>
+                <span class="text-cyan-400">&rarr;</span>
+              </a>
+              <a href="#publications" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded bg-space-900 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-slate-700 transition-colors">
+                <span>Posters &amp; Publications</span>
+                <span class="text-cyan-400">&darr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Scientific Telemetry Card -->
+        <div class="lg:col-span-4 w-full">
+          <div class="rounded-xl border border-slate-800 bg-space-900/90 backdrop-blur p-5 space-y-4 tech-border-glow">
+            
+            <!-- Terminal Header -->
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 font-mono text-xs text-slate-400">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-cyan-400/80 text-[11px]">telemetry.spec</span>
+            </div>
+
+            <!-- Profile Attributes -->
+            <div class="space-y-3 font-mono text-xs">
+              <div>
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Academic Background</span>
+                <span class="text-slate-200 font-medium">Integrated M.Sc. in Physics</span>
+                <span class="text-slate-400 block text-[11px]">Minor in Computer Science</span>
+              </div>
+
+              <div>
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Primary Domains</span>
+                <span class="text-cyan-300">Planetary Surface Composition</span>
+                <span class="text-slate-400 block">Exoplanet Atmospheric Retrieval</span>
+              </div>
+
+              <div>
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Key Instrument Datasets</span>
+                <span class="text-slate-300">VEX / VIRTIS (Venus Express)</span>
+                <span class="text-slate-400 block">LIFE Interferometer Simulated Spectra</span>
+              </div>
+
+              <div>
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px]">Computational Environment</span>
+                <span class="text-emerald-400">GNU/Linux &bull; Python &bull; PyARTS</span>
+              </div>
+            </div>
+
+            <!-- Terminal Status Footer -->
+            <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span class="text-slate-500">STATUS:</span>
+              <span class="text-cyan-300 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                ACTIVE_INVESTIGATION
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 2. RESEARCH SECTION -->
+    <section id="research" class="scroll-mt-24 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase font-semibold">01 // SCIENTIFIC INVESTIGATIONS</span>
+          <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Research Projects</h2>
+        </div>
+        <p class="font-mono text-xs text-slate-400">Spectroscopy &bull; Radiative Transfer &bull; Forward Models</p>
+      </div>
+
+      <!-- Research Cards Grid -->
+      <div class="grid grid-cols-1 gap-8">
+        
+        <!-- Project 1: Master's Thesis -->
+        <article class="rounded-xl border border-slate-800 bg-space-900/60 p-6 sm:p-8 backdrop-blur-sm tech-border-glow hover:border-slate-700 transition-all">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+            <div class="space-y-1">
+              <div class="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">
+                <span class="px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/60">Master's Thesis</span>
+                <span class="text-slate-500">&bull;</span>
+                <span class="text-slate-400">NISER Bhubaneswar</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Venus Surface Compositional Analysis
+              </h3>
+            </div>
+            
+            <div class="font-mono text-xs text-slate-400 bg-space-950/80 px-3 py-1.5 rounded border border-slate-800 self-start">
+              Advisor: <span class="text-slate-200 font-medium">Dr. Guneshwar Thangjam</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-light">
+            Conducted research at NISER Bhubaneswar focused on Venus surface compositional analysis using Venus Express (VIRTIS) data, Venus GRAM, and radiative transfer models. The research investigates atmospheric window radiance to isolate surface thermal emissions from dense atmospheric scattering and absorption.
+          </p>
+
+          <!-- Technical Breakdown Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-slate-800/80 pt-5 font-mono text-xs">
+            <div class="space-y-1">
+              <span class="text-slate-500 uppercase block text-[10px]">Data &amp; Instrument</span>
+              <p class="text-slate-300 font-medium">Venus Express (VIRTIS)</p>
+              <p class="text-slate-400 text-[11px]">Visible &amp; Near-IR Spectra</p>
+            </div>
+            <div class="space-y-1">
+              <span class="text-slate-500 uppercase block text-[10px]">Atmospheric Modeling</span>
+              <p class="text-slate-300 font-medium">Venus GRAM</p>
+              <p class="text-slate-400 text-[11px]">Global Reference Atmosphere</p>
+            </div>
+            <div class="space-y-1">
+              <span class="text-slate-500 uppercase block text-[10px]">Methodology</span>
+              <p class="text-slate-300 font-medium">Radiative Transfer Models</p>
+              <p class="text-slate-400 text-[11px]">Spectral Unmixing &amp; Inversion</p>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-800/60">
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#PlanetarySurfaces</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#VenusExpress</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#VIRTIS</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#VenusGRAM</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#RadiativeTransfer</span>
+          </div>
+        </article>
+
+        <!-- Project 2: LIFE Exoplanet Simulations -->
+        <article class="rounded-xl border border-slate-800 bg-space-900/60 p-6 sm:p-8 backdrop-blur-sm tech-border-glow hover:border-slate-700 transition-all">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+            <div class="space-y-1">
+              <div class="inline-flex items-center space-x-2 text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">
+                <span class="px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/60">Mission Collaboration</span>
+                <span class="text-slate-500">&bull;</span>
+                <span class="text-slate-400">LIFE Mission Architecture</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Simulation Pipelines for Exoplanet Atmospheres
+              </h3>
+            </div>
+            
+            <div class="font-mono text-xs text-slate-400 bg-space-950/80 px-3 py-1.5 rounded border border-slate-800 self-start">
+              Advisor: <span class="text-slate-200 font-medium">Dr. Lee Grenfell</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-light">
+            Simulation pipelines for exoplanet atmospheres connected to the Large Interferometer For Exoplanets (LIFE) project under Dr. Lee Grenfell. Focused on forward modeling of atmospheric transmission and emission spectra to assess characterization capabilities and detectability of biosignature gases in terrestrial exoplanets.
+          </p>
+
+          <!-- Technical Breakdown Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-slate-800/80 pt-5 font-mono text-xs">
+            <div class="space-y-1">
+              <span class="text-slate-500 uppercase block text-[10px]">Target Initiative</span>
+              <p class="text-slate-300 font-medium">LIFE Project</p>
+              <p class="text-slate-400 text-[11px]">Large Interferometer For Exoplanets</p>
+            </div>
+            <div class="space-y-1">
+              <span class="text-slate-500 uppercase block text-[10px]">Core Architecture</span>
+              <p class="text-slate-300 font-medium">Atmospheric Simulation Pipelines</p>
+              <p class="text-slate-400 text-[11px]">Mid-IR Emission &amp; Interferometry</p>
+            </div>
+            <div class="space-y-1">
+              <span class="text-slate-500 uppercase block text-[10px]">Key Focus</span>
+              <p class="text-slate-300 font-medium">Exoplanet Characterization</p>
+              <p class="text-slate-400 text-[11px]">Atmospheric Chem &amp; Habitability</p>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t border-slate-800/60">
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#LIFEproject</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#ExoplanetAtmospheres</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#NullingInterferometry</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#SyntheticSpectra</span>
+            <span class="px-2 py-1 rounded bg-space-950 text-cyan-300 text-xs font-mono border border-slate-800">#ForwardModeling</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- 3. SOFTWARE & DATA SCIENCE SECTION -->
+    <section id="software" class="scroll-mt-24 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase font-semibold">02 // COMPUTATIONAL ARCHITECTURE</span>
+          <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Software &amp; Data Science</h2>
+        </div>
+        <p class="font-mono text-xs text-slate-400">High-Performance Astrophysical Pipelines</p>
+      </div>
+
+      <!-- Workflow & Architecture Banner -->
+      <div class="rounded-xl border border-slate-800 bg-space-900/80 p-6 sm:p-8 backdrop-blur-sm space-y-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          
+          <div class="lg:col-span-8 space-y-3">
+            <div class="flex items-center space-x-2 text-cyan-400 font-mono text-xs">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <span>ENGINEERED FOR HEAVY ASTROPHYSICAL DATASETS</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Linux-Based Computational Workflow
+            </h3>
+
+            <!-- Explicit Highlight text from prompt -->
+            <p class="text-slate-300 text-base leading-relaxed font-light">
+              Building modular computational pipelines in Linux environments for processing heavy astrophysical datasets.
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 flex lg:justify-end">
+            <!-- Requested Button: "View GitHub Repositories" -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-space-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-cyan-500/20 group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+              </svg>
+              <span>View GitHub Repositories</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Pipeline Code / Interactive Simulation Visual -->
+        <div class="rounded-lg border border-slate-800 bg-space-950 p-4 font-mono text-xs overflow-x-auto text-slate-300">
+          <div class="flex items-center justify-between text-slate-500 pb-2 mb-3 border-b border-slate-800">
+            <span>pipeline_flow.py &bull; [Spectroscopy Reduction &amp; RT Engine]</span>
+            <span class="text-cyan-400">ENV: Linux x86_64</span>
+          </div>
+          <pre class="leading-relaxed"><code class="text-slate-400"><span class="text-purple-400">import</span> numpy <span class="text-purple-400">as</span> np
+<span class="text-purple-400">import</span> pyarts
+<span class="text-purple-400">from</span> scipy.optimize <span class="text-purple-400">import</span> minimize
+
+<span class="text-slate-500"># 1. Load calibrated spectral cube &amp; atmospheric profiles</span>
+ws = pyarts.Workspace()
+ws.execute_control_file(<span class="text-emerald-300">"general/agendas.arts"</span>)
+ws.atmosphere_dim = 1
+ws.p_grid = np.logspace(5, -2, num=100)  <span class="text-slate-500"># Pressure levels (Pa)</span>
+
+<span class="text-slate-500"># 2. Compute Radiative Transfer &amp; Surface Flux Disentanglement</span>
+ws.f_grid = np.linspace(2.9e14, 3.1e14, num=500) <span class="text-slate-500"># NIR Window (approx 1.02 um)</span>
+ws.yCalc() <span class="text-slate-500"># Synthetic spectral radiance calculation</span></code></pre>
+        </div>
+
+      </div>
+
+      <!-- Tech Stack Badges Grid -->
+      <div class="space-y-4">
+        <h3 class="font-mono text-xs uppercase tracking-wider text-slate-400">Core Scientific Tech Stack</h3>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          
+          <!-- Python -->
+          <div class="p-4 rounded-lg border border-slate-800 bg-space-900/60 hover:bg-space-850 hover:border-cyan-500/50 transition-all text-center space-y-1">
+            <div class="font-mono text-cyan-400 font-bold text-base">Python</div>
+            <div class="text-[11px] text-slate-400">Core Architecture</div>
+          </div>
+
+          <!-- PyARTS -->
+          <div class="p-4 rounded-lg border border-slate-800 bg-space-900/60 hover:bg-space-850 hover:border-cyan-500/50 transition-all text-center space-y-1">
+            <div class="font-mono text-cyan-300 font-bold text-base">PyARTS</div>
+            <div class="text-[11px] text-slate-400">Radiative Transfer</div>
+          </div>
+
+          <!-- NumPy -->
+          <div class="p-4 rounded-lg border border-slate-800 bg-space-900/60 hover:bg-space-850 hover:border-cyan-500/50 transition-all text-center space-y-1">
+            <div class="font-mono text-sky-400 font-bold text-base">NumPy</div>
+            <div class="text-[11px] text-slate-400">Numerical Tensors</div>
+          </div>
+
+          <!-- SciPy -->
+          <div class="p-4 rounded-lg border border-slate-800 bg-space-900/60 hover:bg-space-850 hover:border-cyan-500/50 transition-all text-center space-y-1">
+            <div class="font-mono text-indigo-400 font-bold text-base">SciPy</div>
+            <div class="text-[11px] text-slate-400">Scientific Routines</div>
+          </div>
+
+          <!-- Matplotlib -->
+          <div class="p-4 rounded-lg border border-slate-800 bg-space-900/60 hover:bg-space-850 hover:border-cyan-500/50 transition-all text-center space-y-1">
+            <div class="font-mono text-emerald-400 font-bold text-base">Matplotlib</div>
+            <div class="text-[11px] text-slate-400">Spectral Plotting</div>
+          </div>
+
+          <!-- Pandas -->
+          <div class="p-4 rounded-lg border border-slate-800 bg-space-900/60 hover:bg-space-850 hover:border-cyan-500/50 transition-all text-center space-y-1">
+            <div class="font-mono text-amber-400 font-bold text-base">Pandas</div>
+            <div class="text-[11px] text-slate-400">Tabular Wrangling</div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- 4. OUTREACH & CREATIVE SECTION -->
+    <section id="outreach" class="scroll-mt-24 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase font-semibold">03 // BEYOND THE LAB</span>
+          <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Outreach &amp; Creative</h2>
+        </div>
+        <p class="font-mono text-xs text-slate-400">Science Communication &bull; Machine Learning &bull; Cinema</p>
+      </div>
+
+      <!-- 3-Column Card Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Outreach 1: Astronomy Education -->
+        <div class="rounded-xl border border-slate-800 bg-space-900/60 p-6 backdrop-blur-sm tech-border-glow flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-950/70 border border-cyan-800/60 flex items-center justify-center text-cyan-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+              </svg>
+            </div>
+            
+            <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider block">Pedagogy &amp; Science Public Engagement</span>
+            <h3 class="text-xl font-bold text-white tracking-tight">Astronomy Education</h3>
+            
+            <p class="text-slate-300 text-sm leading-relaxed font-light">
+              Educator at Stardust Observatory (Goa) and B FAC. Passionate about sharing the wonders of night skies, telescope operations, and foundational astrophysics with students and astronomy enthusiasts.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 font-mono text-xs text-slate-400">
+            <span>Institutions:</span>
+            <span class="text-slate-200 block font-medium">Stardust Observatory (Goa) &amp; B FAC</span>
+          </div>
+        </div>
+
+        <!-- Outreach 2: AI & Analytics -->
+        <div class="rounded-xl border border-slate-800 bg-space-900/60 p-6 backdrop-blur-sm tech-border-glow flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-950/70 border border-indigo-800/60 flex items-center justify-center text-indigo-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+              </svg>
+            </div>
+            
+            <span class="text-xs font-mono text-indigo-400 uppercase tracking-wider block">Machine Learning Competitions &amp; Training</span>
+            <h3 class="text-xl font-bold text-white tracking-tight">AI &amp; Analytics</h3>
+            
+            <p class="text-slate-300 text-sm leading-relaxed font-light">
+              Completed the ISRO-IIRS Outreach Programme on AI/ML for Geodata Analytics and participated in the RGES-PIT Microlensing Data Challenge, applying quantitative algorithms to planetary and astrophysical datasets.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 font-mono text-xs text-slate-400">
+            <span>Highlights:</span>
+            <span class="text-slate-200 block font-medium">ISRO-IIRS &bull; RGES-PIT Challenge</span>
+          </div>
+        </div>
+
+        <!-- Outreach 3: Filmmaking -->
+        <div class="rounded-xl border border-slate-800 bg-space-900/60 p-6 backdrop-blur-sm tech-border-glow flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-950/70 border border-emerald-800/60 flex items-center justify-center text-emerald-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+              </svg>
+            </div>
+            
+            <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider block">Cinematic Science Fiction</span>
+            <h3 class="text-xl font-bold text-white tracking-tight">Filmmaking</h3>
+            
+            <p class="text-slate-300 text-sm leading-relaxed font-light">
+              Writer and director of &ldquo;Kala Chakra&rdquo;, an independent Odia-language sci-fi short film. Exploring speculative physics, time anomalies, and visual narrative storytelling through regional Indian cinema.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 font-mono text-xs text-slate-400">
+            <span>Project:</span>
+            <span class="text-slate-200 block font-medium">&ldquo;Kala Chakra&rdquo; (Writer &amp; Director)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 5. PUBLICATIONS, POSTERS & CERTIFICATES SECTION -->
+    <section id="publications" class="scroll-mt-24 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase font-semibold">04 // SCHOLARLY DISSEMINATION &amp; CREDENTIALS</span>
+          <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Publications, Posters &amp; Certificates</h2>
+        </div>
+        <p class="font-mono text-xs text-slate-400">Posters &bull; Manuscripts &bull; Master's Thesis &bull; Certifications</p>
+      </div>
+
+      <!-- Part 1: Posters & Publications Grid -->
+      <div class="space-y-4">
+        <h3 class="font-mono text-xs uppercase tracking-wider text-slate-400 flex items-center space-x-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          <span>Posters &amp; Publications</span>
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Item 1: Venus VIRTIS Surface Compositional Pipeline -->
+          <article class="rounded-xl border border-slate-800 bg-space-900/60 p-6 backdrop-blur-sm tech-border-glow flex flex-col justify-between hover:border-slate-700 transition-all">
+            <div class="space-y-3">
+              <div class="inline-flex items-center space-x-1.5 text-xs font-mono text-cyan-400">
+                <span class="px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/60">Conference Poster</span>
+                <span class="text-slate-500">&bull;</span>
+                <span class="text-slate-400">Feb 2025</span>
+              </div>
+              
+              <h4 class="text-lg font-bold text-white tracking-tight leading-snug">
+                Venus VIRTIS Surface Compositional Pipeline
+              </h4>
+              
+              <p class="text-slate-300 text-sm leading-relaxed font-light">
+                Poster presented at the IIT Roorkee S2 STEP Conference (Feb 2025).
+              </p>
+            </div>
+
+            <div class="pt-6">
+              <a href="./assets/Venus Surface Compositional Analysis Research Summary.pdf" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg bg-cyan-950/50 hover:bg-cyan-500 hover:text-space-950 border border-cyan-700/60 text-cyan-300 font-medium text-xs font-mono transition-all group">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <span>View Research Summary</span>
+                <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Item 2: VIRTIS-M-IR Venus Surface-Emissivity Inversions -->
+          <article class="rounded-xl border border-slate-800 bg-space-900/60 p-6 backdrop-blur-sm tech-border-glow flex flex-col justify-between hover:border-slate-700 transition-all">
+            <div class="space-y-3">
+              <div class="inline-flex items-center space-x-1.5 text-xs font-mono text-indigo-400">
+                <span class="px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800/60">Research Manuscript</span>
+                <span class="text-slate-500">&bull;</span>
+                <span class="text-slate-400">Full Text</span>
+              </div>
+              
+              <h4 class="text-lg font-bold text-white tracking-tight leading-snug">
+                VIRTIS-M-IR Venus Surface-Emissivity Inversions
+              </h4>
+              
+              <p class="text-slate-300 text-sm leading-relaxed font-light">
+                Manuscript on quantifying contrast attenuation and retrieval resolving limits in Themis Regio.
+              </p>
+            </div>
+
+            <div class="pt-6">
+              <a href="./assets/Full_Manusript_01.pdf" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg bg-indigo-950/50 hover:bg-indigo-500 hover:text-white border border-indigo-700/60 text-indigo-300 font-medium text-xs font-mono transition-all group">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span>Read Manuscript</span>
+                <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Item 3: Master's Thesis -->
+          <article class="rounded-xl border border-slate-800 bg-space-900/60 p-6 backdrop-blur-sm tech-border-glow flex flex-col justify-between hover:border-slate-700 transition-all">
+            <div class="space-y-3">
+              <div class="inline-flex items-center space-x-1.5 text-xs font-mono text-emerald-400">
+                <span class="px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800/60">Master's Thesis</span>
+                <span class="text-slate-500">&bull;</span>
+                <span class="text-slate-400">NISER Bhubaneswar</span>
+              </div>
+              
+              <h4 class="text-lg font-bold text-white tracking-tight leading-snug">
+                Master's Thesis
+              </h4>
+              
+              <p class="text-slate-300 text-sm leading-relaxed font-light">
+                A pipeline for Venusian surface compositional study using VIRTIS data.
+              </p>
+            </div>
+
+            <div class="pt-6">
+              <a href="./assets/2011167_SUMMIT_Final_Thesis.pdf" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-lg bg-emerald-950/50 hover:bg-emerald-500 hover:text-space-950 border border-emerald-700/60 text-emerald-300 font-medium text-xs font-mono transition-all group">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                </svg>
+                <span>Read Thesis</span>
+                <svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Part 2: Certifications, Awards & AI Credentials (2-Column Grid) -->
+      <div class="space-y-4">
+        <h3 class="font-mono text-xs uppercase tracking-wider text-slate-400 flex items-center space-x-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+          <span>Certifications, Credentials &amp; AI Specializations</span>
+        </h3>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+          
+          <!-- Card 1: Certifications, Awards & Academic Documents -->
+          <div class="rounded-xl border border-slate-800 bg-space-900/70 p-6 sm:p-8 backdrop-blur-sm tech-border-glow flex flex-col justify-between hover:border-slate-700 transition-all space-y-6">
+            
+            <div class="space-y-5">
+              <div class="space-y-1">
+                <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Fellowships &bull; Certifications &bull; Academic Distinctions</span>
+                <h4 class="text-xl font-bold text-white tracking-tight">Certifications, Awards &amp; Documents</h4>
+              </div>
+
+              <ul class="space-y-3 font-mono text-xs sm:text-sm text-slate-300">
+                
+                <!-- DISHA Fellowship -->
+                <li class="flex items-start space-x-3 py-1">
+                  <span class="text-cyan-400 text-base leading-none mt-0.5 font-bold">&#10003;</span>
+                  <div>
+                    <span class="text-white font-semibold">DISHA Fellowship</span>
+                    <span class="text-slate-400 text-xs font-sans block sm:inline sm:ml-1">(Dept. of Atomic Energy)</span>
+                  </div>
+                </li>
+
+                <!-- ISRO AI/ML with Certificate Button -->
+                <li class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-slate-800/60 pt-2.5 pb-1">
+                  <div class="flex items-start space-x-3">
+                    <span class="text-cyan-400 text-base leading-none mt-0.5 font-bold">&#10003;</span>
+                    <div>
+                      <span class="text-white font-semibold">AI/ML for Geodata Analytics</span>
+                      <span class="text-slate-400 text-xs font-sans block sm:inline sm:ml-1">(IIRS-ISRO)</span>
+                    </div>
+                  </div>
+                  <a href="./assets/ISRO_IIRS_AI_ML_Geoscience_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 self-start sm:self-auto px-2.5 py-1 rounded bg-cyan-950/60 hover:bg-cyan-500 hover:text-space-950 border border-cyan-800/60 text-cyan-300 text-[11px] font-mono transition-all group">
+                    <svg class="w-3 h-3 text-cyan-400 group-hover:text-space-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <span>View ISRO Certificate</span>
+                    <span class="text-slate-500 group-hover:text-space-950">&rarr;</span>
+                  </a>
+                </li>
+
+                <!-- Astrobiology Introductory Course -->
+                <li class="flex items-start space-x-3 border-t border-slate-800/60 pt-2.5 pb-1">
+                  <span class="text-cyan-400 text-base leading-none mt-0.5 font-bold">&#10003;</span>
+                  <div>
+                    <span class="text-white font-semibold">Astrobiology Introductory Course</span>
+                    <span class="text-slate-400 text-xs font-sans block sm:inline sm:ml-1">(RED Astrobiology School)</span>
+                  </div>
+                </li>
+
+                <!-- PlanetSpark Aptitude Test Certification -->
+                <li class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-slate-800/60 pt-2.5 pb-1">
+                  <div class="flex items-start space-x-3">
+                    <span class="text-cyan-400 text-base leading-none mt-0.5 font-bold">&#10003;</span>
+                    <div>
+                      <span class="text-white font-semibold">PlanetSpark Aptitude Test Certification</span>
+                    </div>
+                  </div>
+                  <a href="./assets/certificate.jpg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 self-start sm:self-auto px-2.5 py-1 rounded bg-cyan-950/60 hover:bg-cyan-500 hover:text-space-950 border border-cyan-800/60 text-cyan-300 text-[11px] font-mono transition-all group">
+                    <svg class="w-3 h-3 text-cyan-400 group-hover:text-space-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <span>View Certificate</span>
+                    <span class="text-slate-500 group-hover:text-space-950">&rarr;</span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+            <!-- Primary Academic Document Buttons -->
+            <div class="pt-4 border-t border-slate-800/80 space-y-2.5">
+              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Official Academic Credentials</span>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-xs">
+                
+                <!-- View M.Sc. Degree -->
+                <a href="./assets/Msc_Certificate2.jpg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between px-3 py-2.5 rounded-lg bg-space-850 hover:bg-space-800 border border-slate-700 hover:border-cyan-400 text-slate-200 transition-all group shadow-sm">
+                  <div class="flex items-center space-x-2 truncate">
+                    <svg class="w-3.5 h-3.5 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                    </svg>
+                    <span class="truncate">M.Sc. Degree</span>
+                  </div>
+                  <span class="text-slate-500 group-hover:text-cyan-400 shrink-0 ml-1">&rarr;</span>
+                </a>
+
+                <!-- View Official Transcript -->
+                <a href="./assets/Transcript.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between px-3 py-2.5 rounded-lg bg-space-850 hover:bg-space-800 border border-slate-700 hover:border-cyan-400 text-slate-200 transition-all group shadow-sm">
+                  <div class="flex items-center space-x-2 truncate">
+                    <svg class="w-3.5 h-3.5 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <span class="truncate">Transcript</span>
+                  </div>
+                  <span class="text-slate-500 group-hover:text-cyan-400 shrink-0 ml-1">&rarr;</span>
+                </a>
+
+                <!-- English Medium Certificate -->
+                <a href="./assets/English_Medium.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between px-3 py-2.5 rounded-lg bg-space-850 hover:bg-space-800 border border-slate-700 hover:border-cyan-400 text-slate-200 transition-all group shadow-sm">
+                  <div class="flex items-center space-x-2 truncate">
+                    <svg class="w-3.5 h-3.5 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <span class="truncate">English Medium</span>
+                  </div>
+                  <span class="text-slate-500 group-hover:text-cyan-400 shrink-0 ml-1">&rarr;</span>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Card 2: Generative AI & LLM Certifications -->
+          <div class="rounded-xl border border-slate-800 bg-space-900/70 p-6 sm:p-8 backdrop-blur-sm tech-border-glow flex flex-col justify-between hover:border-slate-700 transition-all space-y-6">
+            
+            <div class="space-y-5">
+              <div class="space-y-1">
+                <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Anthropic Claude &bull; Agent Workflows &bull; GenAI</span>
+                <h4 class="text-xl font-bold text-white tracking-tight">Generative AI &amp; LLM Certifications</h4>
+              </div>
+
+              <!-- Anthropic Claude Sub-list -->
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400 pb-1 border-b border-slate-800/80">
+                  <span class="text-slate-300 font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    Anthropic Claude Certifications
+                  </span>
+                  <span class="text-cyan-400 text-[11px]">Official Credentials</span>
+                </div>
+
+                <ul class="space-y-2 font-mono text-xs">
+                  
+                  <!-- Claude 101 -->
+                  <li class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-slate-800/70 hover:border-cyan-500/40 transition-colors">
+                    <div class="flex items-center space-x-2">
+                      <span class="text-cyan-400 font-bold">&#8250;</span>
+                      <span class="text-slate-200">Claude 101</span>
+                    </div>
+                    <a href="./assets/Claude-101_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded bg-cyan-950/60 hover:bg-cyan-500 hover:text-space-950 border border-cyan-800/60 text-cyan-300 text-[11px] transition-all">
+                      <span>View PDF</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </li>
+
+                  <!-- Claude Platform 101 -->
+                  <li class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-slate-800/70 hover:border-cyan-500/40 transition-colors">
+                    <div class="flex items-center space-x-2">
+                      <span class="text-cyan-400 font-bold">&#8250;</span>
+                      <span class="text-slate-200">Claude Platform 101</span>
+                    </div>
+                    <a href="./assets/Claude-platform-101_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded bg-cyan-950/60 hover:bg-cyan-500 hover:text-space-950 border border-cyan-800/60 text-cyan-300 text-[11px] transition-all">
+                      <span>View PDF</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </li>
+
+                  <!-- Claude Code 101 -->
+                  <li class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-slate-800/70 hover:border-cyan-500/40 transition-colors">
+                    <div class="flex items-center space-x-2">
+                      <span class="text-cyan-400 font-bold">&#8250;</span>
+                      <span class="text-slate-200">Claude Code 101</span>
+                    </div>
+                    <a href="./assets/Claude-code-101_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded bg-cyan-950/60 hover:bg-cyan-500 hover:text-space-950 border border-cyan-800/60 text-cyan-300 text-[11px] transition-all">
+                      <span>View PDF</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </li>
+
+                  <!-- Intro to Subagents -->
+                  <li class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-slate-800/70 hover:border-cyan-500/40 transition-colors">
+                    <div class="flex items-center space-x-2">
+                      <span class="text-cyan-400 font-bold">&#8250;</span>
+                      <span class="text-slate-200">Intro to Subagents</span>
+                    </div>
+                    <a href="./assets/Claude-Introduction-to-Subagents_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded bg-cyan-950/60 hover:bg-cyan-500 hover:text-space-950 border border-cyan-800/60 text-cyan-300 text-[11px] transition-all">
+                      <span>View PDF</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </li>
+
+                  <!-- Intro to Agent Skills -->
+                  <li class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-slate-800/70 hover:border-cyan-500/40 transition-colors">
+                    <div class="flex items-center space-x-2">
+                      <span class="text-cyan-400 font-bold">&#8250;</span>
+                      <span class="text-slate-200">Intro to Agent Skills</span>
+                    </div>
+                    <a href="./assets/Claude-Introduction-to-Agentic-skills_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded bg-cyan-950/60 hover:bg-cyan-500 hover:text-space-950 border border-cyan-800/60 text-cyan-300 text-[11px] transition-all">
+                      <span>View PDF</span>
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+
+              <!-- Generative AI Mastermind (Outskill) -->
+              <div class="pt-2 border-t border-slate-800/80">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg bg-space-950/70 border border-slate-800/80 font-mono text-xs">
+                  <div class="flex items-start space-x-2.5">
+                    <span class="text-indigo-400 font-bold mt-0.5">&#10003;</span>
+                    <div>
+                      <span class="text-white font-semibold block sm:inline">Generative AI Mastermind</span>
+                      <span class="text-slate-400 text-[11px] font-sans sm:ml-1">(Outskill)</span>
+                    </div>
+                  </div>
+                  <a href="./assets/Summit_Bikram_Nayak_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 self-start sm:self-auto px-3 py-1.5 rounded bg-indigo-950/60 hover:bg-indigo-500 hover:text-white border border-indigo-800/60 text-indigo-300 text-xs transition-all group">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <span>View Certificate</span>
+                    <span class="text-slate-500 group-hover:text-white">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- 6. FOOTER / CONTACT SECTION -->
+    <section id="contact" class="scroll-mt-24 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-cyan-400 font-mono text-xs tracking-widest uppercase font-semibold">05 // COMMUNICATE &amp; CONNECT</span>
+          <h2 class="text-3xl font-bold tracking-tight text-white mt-1">Contact &amp; Curriculum Vitae</h2>
+        </div>
+        <p class="font-mono text-xs text-slate-400">Academic &bull; Collaborative &bull; Research</p>
+      </div>
+
+      <!-- Main Contact Card -->
+      <div class="rounded-xl border border-slate-800 bg-gradient-to-b from-space-900 to-space-950 p-8 sm:p-12 text-center space-y-8 backdrop-blur tech-border-glow">
+        
+        <div class="max-w-xl mx-auto space-y-3">
+          <h3 class="text-2xl sm:text-3xl font-bold text-white">Let's Discuss Planetary Science</h3>
+          <p class="text-slate-300 text-sm sm:text-base font-light">
+            Whether for research collaborations, graduate inquiries, or discussions regarding radiative transfer models and exoplanetary atmospheres, my inbox is open.
+          </p>
+        </div>
+
+        <!-- Prominent Download CV Buttons: Academic & Industry -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="./assets/Summit_Europass_CV.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-7 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-space-950 font-bold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-400/40 transform hover:-translate-y-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            <span>Download Academic CV</span>
+          </a>
+
+          <a href="./assets/CV_Summit_Jobs.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-7 py-3.5 rounded-xl bg-space-850 hover:bg-space-800 border border-slate-700 hover:border-cyan-400 text-slate-100 font-bold text-sm sm:text-base transition-all duration-200 shadow-lg transform hover:-translate-y-0.5">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <span>Download Industry CV</span>
+          </a>
+        </div>
+
+        <!-- Contact Links / Icons -->
+        <div class="pt-6 border-t border-slate-800/80 flex flex-wrap justify-center items-center gap-6 sm:gap-10">
+          
+          <!-- GitHub Placeholder Link -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-2.5 text-slate-400 hover:text-white transition-colors font-mono text-sm">
+            <div class="w-9 h-9 rounded-lg bg-space-850 border border-slate-800 flex items-center justify-center group-hover:border-cyan-400/60 group-hover:bg-cyan-950/30 transition-all">
+              <svg class="w-4 h-4 fill-current text-slate-300 group-hover:text-cyan-300" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+              </svg>
+            </div>
+            <span>GitHub</span>
+          </a>
+
+          <!-- LinkedIn Placeholder Link -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group flex items-center space-x-2.5 text-slate-400 hover:text-white transition-colors font-mono text-sm">
+            <div class="w-9 h-9 rounded-lg bg-space-850 border border-slate-800 flex items-center justify-center group-hover:border-cyan-400/60 group-hover:bg-cyan-950/30 transition-all">
+              <svg class="w-4 h-4 fill-current text-slate-300 group-hover:text-cyan-300" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z"></path>
+              </svg>
+            </div>
+            <span>LinkedIn</span>
+          </a>
+
+          <!-- Email Placeholder Link -->
+          <a href="mailto:summit.bikram@example.com" class="group flex items-center space-x-2.5 text-slate-400 hover:text-white transition-colors font-mono text-sm">
+            <div class="w-9 h-9 rounded-lg bg-space-850 border border-slate-800 flex items-center justify-center group-hover:border-cyan-400/60 group-hover:bg-cyan-950/30 transition-all">
+              <svg class="w-4 h-4 fill-none stroke-current text-slate-300 group-hover:text-cyan-300" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <span>Email</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ACADEMIC PORTFOLIO FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-space-950/90 py-8 relative z-10 text-xs font-mono text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2">
+        <span class="text-slate-400">&copy; Summit Bikram Nayak</span>
+        <span>&bull;</span>
+        <span>Planetary Science &amp; Computational Modeling</span>
+      </div>
+      <div class="flex items-center space-x-4 text-slate-500">
+        <span>NISER Bhubaneswar</span>
+        <span>&bull;</span>
+        <a href="#about" class="hover:text-cyan-400 transition-colors">Back to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MINIMAL JAVASCRIPT FOR RESPONSIVE MENU AND ACTIVE STATE -->
+  <script>
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOpenIcon = document.getElementById('menuOpenIcon');
+    const menuCloseIcon = document.getElementById('menuCloseIcon');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = !mobileMenu.classList.contains('hidden');
+        if (isExpanded) {
+          mobileMenu.classList.add('hidden');
+          menuOpenIcon.classList.remove('hidden');
+          menuCloseIcon.classList.add('hidden');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          menuOpenIcon.classList.add('hidden');
+          menuCloseIcon.classList.remove('hidden');
+        }
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuOpenIcon.classList.remove('hidden');
+          menuCloseIcon.classList.add('hidden');
+        });
+      });
+    }
+
+    // Scroll active link detection
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav .nav-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-cyan-400', 'bg-space-850');
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+          link.classList.add('text-cyan-400', 'bg-space-850');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
